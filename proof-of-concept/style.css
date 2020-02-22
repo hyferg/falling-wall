@@ -1,0 +1,49 @@
+.scene {
+    /*fit to image size, maybe not ideal*/
+    width: 512px;
+    height: 600px;
+    border: 1px solid black;
+    perspective: 500px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    margin-left: -256px;
+}
+
+/*probably want to remove this when wall falls*/
+.scene:hover { cursor: pointer; }
+
+.his-home {
+    width: 100%;
+    position: absolute;
+    z-index: -10;
+}
+.himself {
+    width: 75%;
+}
+
+#texture {
+    width:100%;
+}
+
+#wall {
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-origin: bottom;
+    transition-timing-function: ease-in-out;
+}
+
+.wobble-in {
+    transform: rotateX(10deg);
+}
+
+.wobble-out {
+    transform: rotateX(-15deg);
+}
+
+.fallen {
+    transform: rotateX(90deg);
+}
+
