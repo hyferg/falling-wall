@@ -1,29 +1,34 @@
 .scene {
+    width: 700px;
+    height: 700px;
+    border: 1px solid black;
+    perspective: 500px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    margin-left: -350px;
+}
+.scene-reduced {
     /*fit to image size, maybe not ideal*/
     width: 512px;
     height: 600px;
     border: 1px solid black;
     perspective: 500px;
     position: absolute;
-    top: 10%;
     left: 50%;
+    bottom: 0px;
     margin-left: -256px;
 }
 
 /*probably want to remove this when wall falls*/
 .scene:hover { cursor: pointer; }
 
-.his-home {
-    width: 100%;
-    position: absolute;
-    z-index: -10;
-}
-.himself {
-    width: 75%;
-}
-
 #texture {
     width:100%;
+}
+
+#texture-broken {
+    display: none;
 }
 
 #wall {

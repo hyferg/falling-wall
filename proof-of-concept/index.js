@@ -34,7 +34,8 @@ $(document).ready(function() {
             .queue(function(next) {
                 // the new texture dimensions is the same size with scaled down assets
                 // this means it's not volume preserving
-                $('#texture').attr('src', 'texture-shattered.png');
+                $('#texture').hide();
+                $('#texture-broken').show();
                 next();
             });
 
