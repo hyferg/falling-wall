@@ -1,34 +1,22 @@
-.scene {
-    width: 700px;
-    height: 700px;
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: white;
+}
+
+#scene {
+    width: 100vmin;
+    height: 100vmin;
     border: 1px solid black;
-    perspective: 500px;
+    perspective: 100vmin;
     position: absolute;
-    top: 10%;
+    bottom: 0;
     left: 50%;
-    margin-left: -350px;
-}
-.scene-reduced {
-    /*fit to image size, maybe not ideal*/
-    width: 512px;
-    height: 600px;
-    border: 1px solid black;
-    perspective: 500px;
-    position: absolute;
-    left: 50%;
-    bottom: 0px;
-    margin-left: -256px;
-}
-
-/*probably want to remove this when wall falls*/
-.scene:hover { cursor: pointer; }
-
-#texture {
-    width:100%;
-}
-
-#texture-broken {
-    display: none;
+    transform: translateX(-50%);
+    -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
 }
 
 #wall {
@@ -40,15 +28,30 @@
     transition-timing-function: ease-in-out;
 }
 
-.wobble-in {
-    transform: rotateX(10deg);
+#wall img {
+    max-width: 100vw;
+    max-height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    bottom: 0;
+    opacity: 1.0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.wobble-out {
-    transform: rotateX(-15deg);
-}
+#texture {display: block}
+#texture:hover { cursor: pointer; }
+#texture-broken { display: none; }
 
-.fallen {
-    transform: rotateX(90deg);
-}
+/* animation stack */
+.wobble-in {transform: rotateX(10deg);}
+.wobble-out {transform: rotateX(-15deg);}
+.fallen {transform: rotateX(90deg);}
 
+@media (min-width:320px)  {/* smartphones, iPhone, portrait 480x320 phones */}
+@media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:1281px) {/* hi-res laptops and desktops */}
