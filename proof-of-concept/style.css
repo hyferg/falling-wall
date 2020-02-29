@@ -4,13 +4,13 @@ html, body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background: white;
+    background: #1b1f24;
 }
 
 #scene {
     width: 100vmin;
     height: 100vmin;
-    border: 1px solid black;
+    border: 0px solid black;
     perspective: 100vmin;
     position: absolute;
     bottom: 0;

@@ -16,7 +16,7 @@
    version="1.1"
    id="svg6427"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-   sodipodi:docname="walltest.svg">
+   sodipodi:docname="new-wall.svg">
   <defs
      id="defs6421" />
   <sodipodi:namedview
@@ -26,16 +26,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35000001"
-     inkscape:cx="710.00746"
-     inkscape:cy="2793.3317"
+     inkscape:zoom="0.35"
+     inkscape:cx="721.43605"
+     inkscape:cy="2793.3318"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="2490"
-     inkscape:window-height="1016"
-     inkscape:window-x="1990"
-     inkscape:window-y="27"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:pagecheckerboard="true" />
   <metadata
@@ -129,7 +129,8 @@
        id="a25"
        xlink:href="https://theportal.wiki/wiki/Einstein%27s_General_Relativity_equation"
        target="_blank"
-       transform="translate(-49.136903,1.5119047)">
+       transform="translate(-49.136903,1.5119047)"
+       xlink:title="Einstein field equations">
       <text
          id="text23"
          y="-514.51489"
@@ -144,8 +145,9 @@
     </a>
     <a
        id="a28"
-       xlink:href="https://theportal.wiki/wiki/Einstein%27s_General_Relativity_equation"
-       transform="translate(1.5119047,3.0238094)">
+       xlink:href="https://theportal.wiki/wiki/Atiyah-Singer_Theorem"
+       transform="translate(1.5119047,3.0238094)"
+       xlink:title="Atiyah-Singer Theorem">
       <text
          id="text26"
          y="-516.40472"
@@ -157,21 +159,6 @@
            x="275.92261"
            id="tspan24"
            sodipodi:role="line">Normal Link</tspan></text>
-    </a>
-    <a
-       id="a3739"
-       href="https://theportal.wiki/wiki/Einstein%27s_General_Relativity_equation">
-      <text
-         id="text3737"
-         y="-474.07141"
-         x="334.8869"
-         style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-         xml:space="preserve"><tspan
-           style="font-size:25.39999962px;fill:#ffffff;stroke-width:0.26458332"
-           y="-474.07141"
-           x="334.8869"
-           id="tspan3735"
-           sodipodi:role="line">Non-xlink</tspan></text>
     </a>
   </g>
 </svg>
