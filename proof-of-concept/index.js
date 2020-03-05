@@ -1,5 +1,5 @@
 var articles;
-var audio = new Audio('./assets/woo.mp3');
+var audio = new Audio('./media/woo.mp3');
 var infos = {};
 
 $(document).ready(() => {
