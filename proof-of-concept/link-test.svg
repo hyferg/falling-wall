@@ -1,18 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <link href="style.css" rel="stylesheet">
-        <link href="new-wall.css" rel="stylesheet">
-        <script src='https://unpkg.com/panzoom@9.2.1/dist/panzoom.min.js'></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
-        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <script src="index.js" type="text/javascript"></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-        <div id="sidebar-content">
-        </div>
-        <div>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -27,7 +14,7 @@
    height="297mm"
    viewBox="0 0 210 297"
    version="1.1"
-   id="new-wall"
+   id="svg8"
    sodipodi:docname="link-test.svg"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
   <defs
@@ -111,32 +98,3 @@
     </a>
   </g>
 </svg>
-
-        </div>
-        <div id="scene">
-            <div id="wall">
-                <img id="texture" src="texture.png" />
-                <img id="texture-broken" src="texture-shattered.png" />
-            </div>
-        </div>
-
-        <a class="info-link"
-           target="_blank"
-           href="https://theportal.wiki/wiki/Graph,_Wall,_Tome">
-            <div class="info-box">
-                <div class="info-text">
-                    <p>
-                        <b>Portal Community</b> (b. 2020)
-                    </p>
-                    <p>
-                        <i><b>The wall,</b></i> 2020
-                    </p>
-                    <p>
-                        If one wants to summarise our knowledge of physics in the briefest possible terms, there are three really fundamental observations:
-                    </p>
-                </div>
-            </div>
-        </a>
-
-    </body>
-</html>

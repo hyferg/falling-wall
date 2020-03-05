@@ -10,18 +10,66 @@
 }
 
 .info-box {
-    display: none;
-    position: fixed;
+    /*display: none;*/
+    position: absolute;
+    bottom: 1%;
     left: 50%;
-    bottom: -50px;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     margin: 0 auto;
-    opacity: 0.9;
-    border-radius: 20px;
-    padding: 25px;
+    padding: 0px;
     z-index: 10;
-    background: blue;
-    width: 500px;
-    height: 125px;
-    color: white;
+    opacity: 0.0;
+    background: white;
+    border-radius: 10px;
+}
+.info-text {
+    margin: 15px;
+    height: 4.8em;
+    position: relative;
+    overflow: hidden;
+    background: white;
+    line-height: 1.2em;
+}
+.info-text p {margin: 0;
+              padding: 0;} /*'parse out' padding from wiki*/
+.info-text:after {
+    content: "";
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 70%;
+    height: 1.2em;
+    background: linear-gradient(to right,
+                                rgba(255, 255, 255, 0),
+                                rgba(255, 255, 255, 1) 50%);
+}
+.info-link {
+    color: black;
+}
+
+/* TODO svg displays its ?filename? on mouse hover*/
+svg {
+}
+
+@media (min-width:320px)  {
+    /* smartphones, iPhone, portrait 480x320 phones */
+
+    .info-box{width: 95%;}
+}
+@media (min-width:481px)  {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+}
+@media (min-width:641px)  {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    .info-box{width: 500px;}
+}
+@media (min-width:961px)  {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+}
+@media (min-width:1025px) {
+    /* big landscape tablets, laptops, and desktops */
+}
+@media (min-width:1281px) {
+    /* hi-res laptops and desktops */
 }

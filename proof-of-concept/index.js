@@ -1,15 +1,54 @@
 var svgID = 'new-wall';
 var svgVectorGroup = 'layer1';
 var articles;
+var audio = new Audio('./assets/woo.mp3');
+var infos = {};
 
 $(document).ready(function() {
+    load_data();
+    $('#scene').click(wall_click);
+});
 
+window.addEventListener('load', function () {
+    var svg = document.getElementById(svgVectorGroup);
+	  var instance = panzoom(svg, {
+        zoomSpeed: 0.050,
+        pinchSpeed: 0.5,
+        bounds: true,
+        onTouch: function (e) {return false;} // tells the library to not preventDefault.
+    }).zoomAbs(
+        $(window).width()/2,
+        $(window).height()/2,
+        0.33
+    );
+});
+
+function svg_a_click(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    var a = $(e.target);
+    if (a[0].tagName != 'a')
+        a = a.parents('a');
+    a = a[0];
+    if ('title' in a &&
+        a.title in infos) {
+        var html_data = infos[a.title].html;
+        $('.info-text').html(html_data);
+        $('.info-link').attr("href", infos[a.title].url);
+        MathJax.typeset();
+    }
+    console.log(e);
+    return false;
+}
+
+function load_data () {
 
     var svgc = document.querySelector('svg');
 
     [...svgc.querySelectorAll('a')].forEach(
         anchor => {
             anchor.addEventListener('click', svg_a_click);
+            anchor.addEventListener('touchstart', svg_a_click);
             anchor.title = anchor.getAttributeNS(
                 'http://www.w3.org/1999/xlink',
                 'title'
@@ -22,7 +61,6 @@ $(document).ready(function() {
 
     articles = [...$(svgc).find("a[*|title]").map(
         (i, el) => {
-            console.log(el.title)
             return [[
                 el.title,
                 el.href,
@@ -66,9 +104,7 @@ $(document).ready(function() {
                 inprop: 'url',
             },
             success: function(response) {
-                console.log('success response');
                 for (let k in response.query.pages) {
-                    console.log('pages handle');
                     let pdata = response.query.pages[k];
                     article = Object.values(articles).filter(
                         article => article.url.baseVal.replace('http:', 'https:') == pdata.fullurl.replace('http:', 'https:'));
@@ -77,38 +113,31 @@ $(document).ready(function() {
                     }
                 }
                 for (let title in articles) {
+                    var extracted_text = "cant load information";
                     let article = articles[title];
-                    //TODO
-                    console.log(article);
-                    console.log($('.article:first').clone());
-                    let article_el = $('.article:first').clone().appendTo('#sidebar-content');
-                    article_el.data('title', title).attr('title', title).find('.article-title a').text(title).attr('href', article.url);
-                    if (article.html)
-                        article_el.find('.article-content').html(article.html);
-                   //if (is_ff)
-                   //    article_el.show();
-                    article.article_el = article_el;
+                    if (article.html) {
+                        extracted_text = article.html;
+                    }
+                    infos[title] = {
+                        'html': extracted_text,
+                        'url': article.url.baseVal,
+                    };
                 }
-                $('#sidebar-content').on('mouseenter', '.article-title', e => {
-                    $(articles[$(e.target).parents('.article').data('title')].node).css('outline', '1px solid #f00');
-                }).on('mouseleave', '.article-title', e => {
-                    $(articles[$(e.target).parents('.article').data('title')].node).css('outline', 'none');
-                });
-                MathJax.typeset();
             }
         });
     }
+};
 
+function wall_click() {
+    var wall = $('#wall');
+    var svg = document.getElementById(svgVectorGroup);
+    var wobble_in_duration = 350;
+    var wobble_out_duration = 600;
+    var fall_inward_duration = 650;
+    var scene_fade_out_duration = 1500;
+    var info_box_fade_in_duration = 1500;
 
-    $('#scene').click(function() {
-        var wall = $('#wall');
-        var svg = document.getElementById(svgVectorGroup);
-        var wobble_in_duration = 350;
-        var wobble_out_duration = 600;
-        var fall_inward_duration = 650;
-        var scene_fade_out_duration = 5000;
         wall
-
         // wobble old wall into screen
             .queue(function(next) {
                 wall.css('transition-duration', wobble_in_duration+'ms');
@@ -155,6 +184,7 @@ $(document).ready(function() {
                 );
                 $('#new-wall').css('opacity', '1.0');
                 $('#new-wall').css('z-index', '1');
+                audio.play();
                 next();
             })
 
@@ -169,39 +199,10 @@ $(document).ready(function() {
         // remove out old wall
             .queue(function(next) {
                 $('#scene').remove();
+                $('.info-box').css('transition-duration', info_box_fade_in_duration + 'ms' );
+                $('.info-box').css('display', 'block');
+                $('.info-box').css('opacity', '1.0');
+                $('.info-link').css('transition-duration', '250ms' );
+                next();
             });
-    });
-});
-
-window.addEventListener('load', function () {
-    var svg = document.getElementById(svgVectorGroup);
-	  var instance = panzoom(svg, {
-        zoomSpeed: 0.050,
-        pinchSpeed: 0.5,
-        bounds: true,
-    }).zoomAbs(
-        $(window).width()/2,
-        $(window).height()/2,
-        0.33
-    );
-});
-
-
-function svg_a_click(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    var a = $(e.target);
-    if (a[0].tagName != 'a')
-        a = a.parents('a');
-    a = a[0];
-    if ('title' in a &&
-        a.title in articles) {
-        console.log('click el')
-        let article_el = articles[a.title].article_el;
-        article_el.show();
-        $('#sidebar').animate({scrollTop: article_el[0].offsetTop}, 400);
-        console.log(article_el);
-    }
-    return false;
-}
-
+};
