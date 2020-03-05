@@ -1,21 +1,20 @@
-var svgID = 'new-wall';
-var svgVectorGroup = 'layer1';
 var articles;
 var audio = new Audio('./assets/woo.mp3');
 var infos = {};
 
-$(document).ready(function() {
+$(document).ready(() => {
     load_data();
     $('#scene').click(wall_click);
 });
 
-window.addEventListener('load', function () {
-    var svg = document.getElementById(svgVectorGroup);
-	  var instance = panzoom(svg, {
+$(window).on('load', () => {
+    var svgG = $(document).find('g').get(0);
+	  var instance = panzoom(svgG, {
         zoomSpeed: 0.050,
         pinchSpeed: 0.5,
         bounds: true,
-        onTouch: function (e) {return false;} // tells the library to not preventDefault.
+        // tells the library to not 'preventDefault' so we can handle it
+        onTouch: function (e) {return false;}
     }).zoomAbs(
         $(window).width()/2,
         $(window).height()/2,
@@ -24,6 +23,8 @@ window.addEventListener('load', function () {
 });
 
 function svg_a_click(e) {
+    // inspired/written by @demp
+
     e.preventDefault();
     e.stopPropagation();
     var a = $(e.target);
@@ -37,14 +38,13 @@ function svg_a_click(e) {
         $('.info-link').attr("href", infos[a.title].url);
         MathJax.typeset();
     }
-    console.log(e);
     return false;
 }
 
 function load_data () {
+    // written by @demp
 
     var svgc = document.querySelector('svg');
-
     [...svgc.querySelectorAll('a')].forEach(
         anchor => {
             anchor.addEventListener('click', svg_a_click);
@@ -130,7 +130,7 @@ function load_data () {
 
 function wall_click() {
     var wall = $('#wall');
-    var svg = document.getElementById(svgVectorGroup);
+    var svg = $(document).find('g').get(0);
     var wobble_in_duration = 350;
     var wobble_out_duration = 600;
     var fall_inward_duration = 650;
@@ -199,8 +199,12 @@ function wall_click() {
         // remove out old wall
             .queue(function(next) {
                 $('#scene').remove();
-                $('.info-box').css('transition-duration', info_box_fade_in_duration + 'ms' );
-                $('.info-box').css('display', 'block');
+                $('.info-box').css(
+                    'transition',
+                    'visibility 0s;');
+                $('.info-box').css('transition-duration',
+                                   info_box_fade_in_duration + 'ms' );
+                $('.info-box').css('visibility', 'visible');
                 $('.info-box').css('opacity', '1.0');
                 $('.info-link').css('transition-duration', '250ms' );
                 next();

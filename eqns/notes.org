@@ -1,4 +1,84 @@
-
+* TODO In [0/19]
+** TODO Einstein mass energy equation [0/2]
+   - [ ] on wall
+   - [ ] wiki page up
+** TODO Faraday tensor [0/2]
+   - [ ] on wall
+   - [ ] wiki page up
+   - birdtrack?
+** TODO Riemann curvature tensor (decomposition) [0/2]
+   - [ ] on wall
+   - [ ] wiki page up
+** TODO Einstein field equations [0/2]
+   - [ ] on wall
+   - [ ] wiki page up
+** TODO Borel–Weil–Bott [0/2]
+   - [ ] on wall
+   - [ ] wiki page up
+   - could maybe be rep.d better
+** TODO Klein–Gordon equation [0/2]
+   - [ ] on wall
+   - [ ] wiki page up
+      - einstein notation for partial derivative?
+** TODO Levi-Civita from metric [0/2]
+   - [ ] on wall
+   - [ ] wiki page up
+   - birdtracks?
+   - [ ] verify that these two are sufficient
+** TODO Uncertainty principle [0/2]
+   - [ ] on wall
+   - [ ] wiki page up
+** TODO Dirac equation [0/2]
+   - [ ] on wall
+   - [ ] wiki page up
+** TODO Stokes' theorem [0/2]
+   - [ ] on wall
+   - [ ] wiki page up
+** TODO Torus [0/2]
+   - [ ] on wall
+   - [ ] wiki page up
+   - [X] euler characterstic
+   - [ ] Cell decomposition of torus
+   - [X] gauss bonnet formula
+** TODO Yang–Baxter equation [0/2]
+   - [ ] on wall
+   - [ ] wiki page up
+   - birdtracks
+** TODO Aharonov–Bohm effect [0/2]
+   - [ ] on wall
+   - [ ] wiki page up
+** TODO Atiyah–Patodi-Singer index theorem [0/2]
+   - [ ] on wall
+   - [ ] wiki page up
+** TODO Yang–Mills equations [0/2]
+   - [ ] on wall
+   - [ ] wiki page up
+   - [ ] with current
+** TODO Bianchi generates Maxwells' [0/2]
+   - [ ] on wall
+   - [ ] wiki page up
+** TODO _ [0/2]
+   - [ ] on wall
+   - [ ] wiki page up
+** TODO _ [0/2]
+   - [ ] on wall
+   - [ ] wiki page up
+** TODO _ [0/2]
+   - [ ] on wall
+   - [ ] wiki page up
+* TODO Equations In
+    - [ ] dAFA = 0
+    - [ ] dA2 = FA
+    - [ ] gauge transformation (h) on connection (A) and FA
+      -  F_(A h) = h^(-1) F_A. h = ad_h(F_A)
+* Hold
+  - [ ] Diagram of black hole with schwartzchild radius
+  - [ ] Jones polynomial, witten path integral
+  - [ ] Feynman diagram
+  - [ ] Associativity eqn in QFT
+  - [ ] supergravity
+    - [ ] supergravity lagrangian
+    - [ ] root diagram of E8
 * Notes
   - removed schwartzchild
   - removed witten knot 
@@ -12,43 +92,3 @@
     - [ ] + magic triangle
 * PDF extra
   - Maxwell
-* In
-* Equations In
-    - [X] Einstein mass energy equation
-    - [X] faraday tensor
-    - relativistic
-    - [X] Bianchi identity
-      - birdtrack
-    - [X] riemann curvature tensor (decomposition)
-      - birdtrack
-    - [X] Einstein General Relativity Eqns
-      - add cosmo constant
-    - [X] borel weil bott
-      - could maybe be rep.d better
-    - [X] klein gordon mexican hat
-      - einstein notation for partial derivative?
-    - [X] levi civita constructed from metric
-      - birdtracks?
-      - probaly not correct
-    - [X] prequantization -> heisenberg uncertainty
-    - [X] Dirac Eqn
-    - [X] Stoke's theorem
-    - [-] torus
-      - [X] euler characterstic
-      - [ ] Cell decomposition of torus
-      - [X] gauss bonnet formula
-    - [X] Yang Baxter eqns
-      - birdtracks
-    - [X] aharanov bohm effect
-    - [X] Atyiah Patodi Singer Theorem
-    - [ ] YM Eqns
-      - with current
-    - [ ] bianchi generates maxwells
-* Hold
-  - [ ] Diagram of black hole with schwartzchild radius
-  - [ ] Jones polynomial, witten path integral
-  - [ ] Feynman diagram
-  - [ ] Associativity eqn in QFT
-  - [ ] supergravity
-    - [ ] supergravity lagrangian
-    - [ ] root diagram of E8
