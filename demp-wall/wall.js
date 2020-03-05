@@ -24,6 +24,7 @@ document.addEventListener('readystatechange', function(e) {
         let nx = (srect.width - (crect.height * aspect_ratio)) / 2 - (srect.height / crect.height) / crect.width;
         svg.setAttribute('viewBox', `-${nx} ${srect.y} ${srect.width} ${srect.height}`);
     }
+
     odoc.addEventListener('wheel', svg_mouse_wheel_event);
     odoc.addEventListener('mousedown', svg_mouse_down_event);
     odoc.addEventListener('mouseup', svg_mouse_up_event);
@@ -31,9 +32,29 @@ document.addEventListener('readystatechange', function(e) {
     odoc.addEventListener('pointerleave', svg_mouse_leave_event);
     odoc.addEventListener('touchmove', svg_touch_move_event);
     odoc.addEventListener('touchstart', svg_touch_start_event);
+
     [...odoc.querySelectorAll('a')].forEach(anchor => { anchor.addEventListener('click', svg_a_click); });
-    articles = [... $(svg).find('a[title]').map((i, el) => { return [[el.attributes.title.value, el.attributes.href.value, el]]; })].reduce((articles, t) => { articles[t[0]] = {url: t[1], node: t[2]}; return articles; }, {});
-    let titles = [...new Set(Object.values(articles).map(tdata => decodeURIComponent(tdata.url.split('/').pop().replace(/\+/g, ' ').replace(/_/g, ' '))))];
+
+    articles = [... $(svg).find('a[title]').map(
+        (i, el) => {
+            console.log(el.title);
+            return [[el.attributes.title.value, el.attributes.href.value, el]];
+        })]
+        .reduce(
+            (articles, t) => {
+                articles[t[0]] = {url: t[1], node: t[2]}; return articles;
+            }, {});
+
+    let titles = [...new Set(Object.values(articles).map(
+        tdata => decodeURIComponent(
+            tdata.url
+                .split('/')
+                .pop()
+                .replace(/\+/g, ' ')
+                .replace(/_/g, ' ')
+        )))];
+
+    console.log(titles)
     for (let i = 0, j = titles.length; i < j; i += 50) {
         var temp_titles = titles.slice(i, i + 50).join('|');
         $.ajax({
@@ -52,15 +73,18 @@ document.addEventListener('readystatechange', function(e) {
                 inprop: 'url',
             },
             success: function(response) {
+                console.log(response);
                 for (let k in response.query.pages) {
                     let pdata = response.query.pages[k];
-                    article = Object.values(articles).filter(article => article.url.replace('http:', 'https:') == pdata.fullurl.replace('http:', 'https:'));
+                    article = Object.values(articles).filter(
+                        article => article.url.replace('http:', 'https:') == pdata.fullurl.replace('http:', 'https:'));
                     if (article) {
                         article[0].html = pdata.extract;
                     }
                 }
                 for (let title in articles) {
                     let article = articles[title];
+                    console.log(article);
                     let article_el = $('.article:first').clone().appendTo('#sidebar-content');
                     article_el.data('title', title).attr('title', title).find('.article-title a').text(title).attr('href', article.url);
                     if (article.html)
@@ -73,7 +97,7 @@ document.addEventListener('readystatechange', function(e) {
                     $(articles[$(e.target).parents('.article').data('title')].node).css('outline', '1px solid #f00');
                 }).on('mouseleave', '.article-title', e => {
                     $(articles[$(e.target).parents('.article').data('title')].node).css('outline', 'none');
-                })
+                });
                 MathJax.typeset();
             }
         });

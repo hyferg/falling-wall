@@ -1,0 +1,54 @@
+
+* Notes
+  - removed schwartzchild
+  - removed witten knot 
+    - [ ] compensate with holonomy
+  - removed feynman diagram
+    - [ ] compensate with art deco border
+  - removed associativity in QFT
+    - [ ] understand better or compensate with lie algebra
+  - removed supergrav and e8 root diagram
+    - [ ] + other lagrangian
+    - [ ] + magic triangle
+* PDF extra
+  - Maxwell
+* In
+* Equations In
+    - [X] Einstein mass energy equation
+    - [X] faraday tensor
+    - relativistic
+    - [X] Bianchi identity
+      - birdtrack
+    - [X] riemann curvature tensor (decomposition)
+      - birdtrack
+    - [X] Einstein General Relativity Eqns
+      - add cosmo constant
+    - [X] borel weil bott
+      - could maybe be rep.d better
+    - [X] klein gordon mexican hat
+      - einstein notation for partial derivative?
+    - [X] levi civita constructed from metric
+      - birdtracks?
+      - probaly not correct
+    - [X] prequantization -> heisenberg uncertainty
+    - [X] Dirac Eqn
+    - [X] Stoke's theorem
+    - [-] torus
+      - [X] euler characterstic
+      - [ ] Cell decomposition of torus
+      - [X] gauss bonnet formula
+    - [X] Yang Baxter eqns
+      - birdtracks
+    - [X] aharanov bohm effect
+    - [X] Atyiah Patodi Singer Theorem
+    - [ ] YM Eqns
+      - with current
+    - [ ] bianchi generates maxwells
+* Hold
+  - [ ] Diagram of black hole with schwartzchild radius
+  - [ ] Jones polynomial, witten path integral
+  - [ ] Feynman diagram
+  - [ ] Associativity eqn in QFT
+  - [ ] supergravity
+    - [ ] supergravity lagrangian
+    - [ ] root diagram of E8
