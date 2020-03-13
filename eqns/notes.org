@@ -1,71 +1,74 @@
 * TODO In [0/19]
-** TODO Einstein mass energy equation [0/2]
+** TODO _ [0/2]
    - [ ] on wall
    - [ ] wiki page up
-** TODO Faraday tensor [0/2]
-   - [ ] on wall
+** TODO Aharonov–Bohm effect [1/2]
+   - [X] on wall
    - [ ] wiki page up
-   - birdtrack?
-** TODO Riemann curvature tensor (decomposition) [0/2]
-   - [ ] on wall
+** TODO Atiyah–Patodi-Singer index theorem [1/2]
+   - [X] on wall
    - [ ] wiki page up
-** TODO Einstein field equations [0/2]
-   - [ ] on wall
+** TODO Bianchi generates Maxwells' [1/2]
+   - [X] on wall
    - [ ] wiki page up
-** TODO Borel–Weil–Bott [0/2]
-   - [ ] on wall
+** TODO Bianchi identity [1/2]
+   - [X] on wall
+   - [ ] wiki page up
+** TODO Borel–Weil–Bott [1/2]
+   - [X] on wall
    - [ ] wiki page up
    - could maybe be rep.d better
-** TODO Klein–Gordon equation [0/2]
-   - [ ] on wall
+** TODO Dirac equation [1/2]
+   - [X] on wall
    - [ ] wiki page up
-      - einstein notation for partial derivative?
-** TODO Levi-Civita from metric [0/2]
-   - [ ] on wall
+** TODO Einstein field equations [1/2]
+   - [X] on wall
+   - [ ] wiki page up
+** TODO Einstein mass energy equation [1/2]
+   - [X] on wall
+   - [ ] wiki page up
+** TODO Exterior (cov.) derivative curvature [1/2]
+   - [X] on wall
+   - [ ] wiki page up
+** TODO Faraday tensor [1/2]
+   - [X] on wall
+   - [ ] wiki page up
+   - birdtrack?
+** TODO Gauge transformation effect [1/2]
+   - [X] on wall
+   - [ ] wiki page up
+** TODO Klein–Gordon equation [1/2]
+   - [X] on wall
+   - [ ] wiki page up
+     - einstein notation for partial derivative?
+** TODO Levi-Civita from metric [1/3]
+   - [X] on wall
    - [ ] wiki page up
    - birdtracks?
    - [ ] verify that these two are sufficient
-** TODO Uncertainty principle [0/2]
-   - [ ] on wall
+** TODO Riemann curvature tensor (decomposition) [1/2]
+   - [X] on wall
    - [ ] wiki page up
-** TODO Dirac equation [0/2]
-   - [ ] on wall
+** TODO Stokes' theorem [1/2]
+   - [X] on wall
    - [ ] wiki page up
-** TODO Stokes' theorem [0/2]
-   - [ ] on wall
+** TODO Torus [1/2]
+   - [X] on wall
+     - [X] euler characterstic
+     - [X] Cell decomposition of torus
+     - [X] gauss bonnet formula
    - [ ] wiki page up
-** TODO Torus [0/2]
-   - [ ] on wall
+** TODO Uncertainty principle [1/2]
+   - [X] on wall
    - [ ] wiki page up
-   - [X] euler characterstic
-   - [ ] Cell decomposition of torus
-   - [X] gauss bonnet formula
-** TODO Yang–Baxter equation [0/2]
-   - [ ] on wall
+** TODO Yang–Baxter equation [1/2]
+   - [X] on wall
    - [ ] wiki page up
    - birdtracks
-** TODO Aharonov–Bohm effect [0/2]
-   - [ ] on wall
-   - [ ] wiki page up
-** TODO Atiyah–Patodi-Singer index theorem [0/2]
-   - [ ] on wall
-   - [ ] wiki page up
 ** TODO Yang–Mills equations [0/2]
    - [ ] on wall
    - [ ] wiki page up
    - [ ] with current
-** TODO Bianchi generates Maxwells' [0/2]
-   - [ ] on wall
-   - [ ] wiki page up
-** TODO _ [0/2]
-   - [ ] on wall
-   - [ ] wiki page up
-** TODO _ [0/2]
-   - [ ] on wall
-   - [ ] wiki page up
-** TODO _ [0/2]
-   - [ ] on wall
-   - [ ] wiki page up
 * TODO Equations In
     - [ ] dAFA = 0
     - [ ] dA2 = FA
