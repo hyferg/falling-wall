@@ -4,7 +4,6 @@ var infos = {};
 
 $(document).ready(() => {
     load_data();
-    $('#scene').click(wall_click);
 });
 
 $(window).on('load', () => {
@@ -13,8 +12,7 @@ $(window).on('load', () => {
     // tells the library to not 'preventDefault' so we can handle it
     // onTouch: function (e) {return false;}
 	  var instance = panzoom(svgG, {
-        smoothScroll: false,
-        zoomSpeed: 0.050,
+        smoothScroll: true,
         pinchSpeed: 0.5,
         bounds: true
     });
@@ -23,6 +21,7 @@ $(window).on('load', () => {
         $(window).height()/2,
         0.33
     );
+    $('#scene').click(wall_click(instance));
 });
 
 function svg_a_click(e) {
@@ -135,7 +134,8 @@ function load_data () {
     }
 };
 
-function wall_click() {
+function wall_click(instance) {
+    return () => {
     var wall = $('#wall');
     var svg = $(document).find('g').get(0);
     var wobble_in_duration = 350;
@@ -187,7 +187,7 @@ function wall_click() {
         // spawn new wall
             .queue(function(next) {
                 // smoothZoom takes in (x,y,scale)
-                panzoom(svg).smoothZoom(
+                instance.smoothZoom(
                     $(window).width()/2,
                     $(window).height()/2 + $(window).height()/2,
                     1.3 // scale by this factor
@@ -218,4 +218,5 @@ function wall_click() {
                 $('.info-link').css('transition-duration', '250ms' );
                 next();
             });
+    };
 };
